@@ -1,0 +1,1284 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Base Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+/* Color Variables */
+:root {
+    --lightgray-color: #898989;
+    --lightblue-color: #25346B;
+    --darkblue-color: #25346BE5;
+    --text-color: #F2F3F7;
+    --black-color: #101010;
+    --gray-color: #4C4C4C;
+    --gray-dark-color: #E5E5E5;
+    --font-roboto: "Roboto", sans-serif;
+    --font-poppins: "Poppins", sans-serif;
+}
+
+body {
+    font-family: var(--font-roboto);
+    color: var(--black-color);
+    line-height: 1.5;
+}
+
+section {
+    padding: 60px 0;
+}
+
+.border-none {
+    border: none !important;
+}
+
+/* Navbar Styles */
+.custom-navbar {
+    padding: 12px;
+    border-bottom: 1px solid rgba(137, 137, 137, 0.3);
+    background: #ffffff;
+}
+
+.custom-center-dropdowns .nav-item {
+    margin: 0;
+    width: 100%;
+}
+
+.login-btn-section {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.custom-navbar .btn {
+    padding: 4px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    border: 1px solid var(--lightblue-color);
+    text-transform: uppercase;
+}
+
+.custom-navbar .btn-primary {
+    background: var(--lightblue-color);
+    color: white;
+    font-weight: 600;
+}
+
+.mobile-navbar-wapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.mobile-navbar-wapper .custom-link {
+    position: relative;
+    padding-bottom: 5px;
+    color: var(--lightgray-color);
+    font-family: var(--font-roboto);
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+.mobile-navbar-wapper .custom-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 0;
+    background-color: var(--lightgray-color);
+    transition: width 0.5s ease;
+}
+
+.mobile-navbar-wapper .custom-link:hover::after {
+    width: 100%;
+}
+
+/* Home Section */
+.home-section {
+    padding: 2rem 0;
+}
+
+.section-spacing {
+    padding: 60px 0;
+}
+
+.home-bg-img {
+    background-image: url("../images/hoge-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.heading-items h1 {
+    font-size: 46px;
+    font-family: var(--font-poppins);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.heading-items p {
+    font-size: 20px;
+    font-family: var(--font-poppins);
+    font-weight: 300;
+}
+
+.home-phone {
+    height: 506px;
+    max-width: 556px;
+}
+
+.home-phone img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Search Box */
+.home-search-section {
+    padding-bottom: 0;
+}
+
+.search-box {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+    padding: 15px 25px;
+}
+
+.search-section {
+    padding: 28px 58px;
+    margin-top: -95px;
+}
+
+.divider {
+    border-left: 1px solid #ddd;
+    height: 30px;
+}
+
+.form-select,
+.form-control {
+    border: none;
+    box-shadow: none;
+}
+
+.form-select {
+    width: 80%;
+    padding-left: 75px;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--lightgray-color);
+}
+
+.form-select:focus,
+.form-control:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.search-icon {
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+/* Common Heading */
+.common-heading {
+    text-align: center;
+    line-height: 16px;
+    margin-bottom: 35px;
+}
+
+.common-heading h2 {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: var(--font-roboto);
+    color: var(--black-color);
+    background: #fff;
+    position: relative;
+}
+
+.common-heading h2 span {
+    position: relative;
+    z-index: 100;
+    background: #fff;
+    padding: 0 15px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.common-heading h2::after {
+    content: '';
+    display: block;
+    width: 45%;
+    height: 1px;
+    background-color: var(--gray-dark-color);
+    position: absolute;
+    inset: 0;
+    margin: auto;
+}
+
+.common-heading p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--lightgray-color);
+}
+
+.without-line h2 {
+    background: transparent;
+}
+
+.without-line h2::after {
+    display: none;
+}
+
+/* Mobile Cards */
+.mobile-card-1 .phone-product {
+    height: 268px;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    /* box-shadow: 0 0 0 2px var(--gray-dark-color); */
+    /* border-radius: 25px; */
+}
+
+.mobile-card-1 .phone-product img {
+    transition: transform 0.5s ease-in;
+    width: 100%;
+    height: 100%;
+    /* ✅ Corrected here */
+}
+
+.mobile-card-1 .phone-product img:hover {
+    transform: scale(1.05);
+}
+
+.mobile-card-1 .card {
+    box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.mobile-card-row {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+}
+
+.mobile-slider .slick-list {
+    padding: 10px 0;
+}
+
+.customers-section .slick-track {
+    padding: 10px 0;
+}
+
+.mobile-card-row img {
+    width: 220px;
+    max-width: 220px;
+    height: auto;
+    object-fit: contain;
+}
+
+.price {
+    margin-top: 10px;
+}
+
+.price span {
+    background: linear-gradient(90deg, #25346B 23.08%, #FFFFFF 100%);
+    padding: 4px 20px;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.card .card-body {
+    padding: 10px 0;
+}
+
+.card-body h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 14px 0 5px;
+}
+
+.slick-prev,
+.slick-next {
+    display: none !important;
+}
+
+/* Slider Dots */
+.deals-bg .slick-dots {
+    display: flex !important;
+    justify-content: center;
+    padding-top: 10px;
+    position: absolute;
+    width: 100%;
+    bottom: -60px;
+}
+
+.deals-bg .slick-dots li button {
+    width: 12px;
+    height: 12px;
+    border-radius: 20px;
+    background-color: #EBF3FF;
+    border: none;
+    margin: 0 2px;
+    text-indent: -9999px;
+    transition: background-color 0.3s ease;
+}
+
+.deals-bg .slick-dots li.slick-active button {
+    background-color: #EBF3FF;
+    width: 25px;
+}
+
+.card-text {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.rating-box {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.rating-box .rating-btn {
+    background: var(--lightblue-color);
+    color: var(--text-color);
+    padding: 3px 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.rating-box .rating-num {
+    padding: 0 6px;
+    border: 1px solid var(--lightgray-color);
+    font-size: 16px;
+}
+
+.case-many {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--black-color);
+}
+
+.case-many span {
+    color: var(--lightgray-color);
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: line-through;
+}
+
+.view-btn {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.view-btn a {
+    color: var(--text-color);
+    font-family: var(--font-roboto);
+    font-weight: 600;
+    font-size: 16px;
+    background: var(--lightblue-color);
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-style: italic;
+}
+
+/* Deals Section */
+.deals-bg {
+    background-image: url("../images/explor-bg-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.deals-heading-section h2 {
+    font-size: 40px;
+    font-weight: 400;
+    font-family: var(--font-poppins);
+    margin: 0;
+}
+
+.deals-heading-section p {
+    font-size: 17px;
+    font-weight: 400;
+    font-family: var(--font-poppins);
+    color: var(--gray-color);
+    line-height: 20px;
+    padding: 16px 0;
+}
+
+.explore a {
+    color: var(--text-color);
+    font-family: var(--font-roboto);
+    font-weight: 500;
+    font-size: 16px;
+    background: var(--lightblue-color);
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.explore-img {
+    max-width: 348px;
+    height: auto;
+    object-fit: cover;
+}
+
+.explore-img img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Partners Section */
+.partners-section {
+    background: var(--text-color);
+}
+
+.company-logo-img {
+    flex: 0 0 calc(100% / 7);
+    max-width: calc(100% / 7);
+    padding: 10px;
+}
+
+.logo-icon {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Brand Section */
+.brand-section {
+    background: white;
+}
+
+.brand-section .company-brand-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.company-brand-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.company-brand-wrapper .brand-img {
+    max-width: 140px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.company-brand-wrapper .brand-img:hover {
+    transform: scale(1.1);
+}
+
+/* Customers Section */
+.customers-section {
+    padding: 40px 0;
+}
+
+.scroll-cards {
+    /* display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto; */
+    gap: 24px;
+    padding-bottom: 15px;
+    scroll-behavior: smooth;
+}
+
+.scroll-cards::-webkit-scrollbar {
+    height: 8px;
+    display: none;
+}
+
+.scroll-cards::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.slick-initialized .slick-slide {
+    margin: 0 10px;
+}
+
+/* .customers-section .slick-dots {
+    display: none;
+} */
+
+.clinet-card {
+    flex: 0 0 auto;
+    width: 30%;
+    min-width: 330px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.clinet-card .customers-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--black-color);
+}
+
+.clinet-card .description {
+    color: var(--lightgray-color);
+    line-height: 1.3;
+    font-size: 16px;
+    margin: 15px 0;
+}
+
+.clinet-card .user-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.clinet-card .user-section img {
+    width: 64px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.clinet-card .user-name h5 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 100%;
+}
+
+.clinet-card .user-name p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+}
+
+/* Footer Section */
+footer {
+    background: var(--text-color);
+    padding: 40px 0 0;
+}
+
+.footer-logo-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.footer-logo-section img {
+    width: 100px;
+    max-width: 100px;
+    height: auto;
+    object-fit: contain;
+}
+
+.footer-logo-section p {
+    color: var(--darkblue-color);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.footer-social-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-social-section .footer-media {
+    display: flex;
+    gap: 5px;
+}
+
+.footer-media span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.footer-media span:hover {
+    transform: scale(1.1);
+}
+
+.footer-media svg {
+    width: 30px;
+    height: 25px;
+    fill: #25346B;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.footer-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--lightblue-color);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--black-color);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #1a237e;
+}
+
+.footer-contact-section {
+    display: flex;
+    gap: 40px;
+}
+
+.footer-contact {
+    padding: 0;
+    margin-left: 0;
+}
+
+.footer-contact li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    list-style: none;
+    font-weight: 400;
+    color: var(--black-color);
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-contact svg {
+    margin-right: 0.5rem;
+    padding-top: 5px;
+    display: block;
+    height: auto;
+    max-width: 17px;
+}
+
+.footer-bottom {
+    font-size: 0.9rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--gray-dark-color);
+    padding: 20px 0;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+.footer-policy {
+    text-decoration: none;
+    color: #555;
+    margin-left: 10px;
+}
+
+.footer-policy:hover {
+    color: #1a237e;
+}
+
+.your-slider .row {
+    margin: 0;
+}
+
+.your-slider img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.icon-svg {
+    transition: transform 0.3s ease;
+}
+
+.footer-toggle.active .icon-svg {
+    transform: rotate(45deg);
+}
+
+.company-toggle-section .footer-icon {
+    display: none;
+}
+
+/* Partners Grid */
+.partners-section {
+    padding: 50px 20px;
+    background-color: #f4f6fa;
+    text-align: center;
+}
+
+.brand-logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+    max-width: 1000px;
+}
+
+.brand-logos li {
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-logos img {
+    max-width: 100%;
+    height: auto;
+    max-height: 50px;
+    object-fit: contain;
+}
+
+/* Responsive Styles */
+@media (max-width: 1199px) {
+    .home-phone {
+        max-height: 450px;
+    }
+}
+
+@media (max-width: 991px) {
+
+    /* common-------- */
+    section {
+        padding: 30px;
+    }
+
+    /* home page ------- */
+    .heading-items h1 {
+        font-size: 25px;
+    }
+
+    .common-heading h2,
+    .common-heading h2 span {
+        font-size: 24px;
+    }
+
+    .custom-center-dropdowns {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .company-brand-wrapper .brand-img {
+        max-width: 130px;
+    }
+
+    .home-phone {
+        max-height: 400px;
+    }
+
+
+
+    .mobile-navbar {
+        background: var(--text-color);
+        border-radius: 5px;
+        /* padding: 5px; */
+        max-width: 350px;
+        width: 100%;
+        position: absolute;
+        right: 100px;
+        top: 75px;
+    }
+
+    .deals-heading-section h2 {
+        font-size: 28px;
+    }
+
+    .navbar-nav .custom-link {
+        width: 100%;
+        border-bottom: 1px solid var(--lightgray-color);
+        padding: 10px 8px;
+        /* margin: 5px 0; */
+    }
+
+    .login-btn-section {
+        justify-content: space-between;
+        gap: 0;
+        padding: 10px 8px;
+    }
+
+    .mobile-card-1 .card {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .deals-heading-section p {
+        font-size: 16px;
+        line-height: 26px;
+        padding: 8px 0;
+        margin-bottom: 5px;
+    }
+
+    .mobile-card-row img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-expand-lg .navbar-nav {
+        gap: 0px !important;
+    }
+
+    .mobile-card-1 .card {
+        flex-direction: column;
+    }
+
+    .home-section {
+        padding-top: 40px;
+    }
+
+    .footer-contact li {
+        font-size: 14px;
+    }
+
+    .border-end {
+        border: none !important;
+    }
+
+    .footer-contact {
+        margin-bottom: 0;
+    }
+
+    .mobile-navbar {
+        background: var(--text-color);
+        border-radius: 5px;
+        /* padding: 5px; */
+        max-width: 350px;
+        width: 100%;
+        position: absolute;
+        right: 34px;
+        top: 75px;
+    }
+
+    .navbar-nav .custom-link {
+        width: 100%;
+        border-bottom: 1px solid var(--lightgray-color);
+        padding: 10px 9px;
+        /* margin: 5px 0; */
+    }
+
+    .login-btn-section {
+        justify-content: space-between;
+        gap: 0;
+        padding: 10px 8px;
+    }
+
+    section {
+        padding: 28px 0;
+    }
+
+    .deals-bg .slick-dots {
+        bottom: -40px;
+    }
+
+    .home-phone {
+        max-height: 340px;
+    }
+
+    .heading-items h1 {
+        font-size: 29px;
+    }
+
+    .heading-items p {
+        font-size: 16px;
+    }
+
+    .navbar-brand img {
+        width: 100px;
+        padding: 4px 0;
+        height: 40px;
+        object-fit: contain;
+    }
+
+    .common-heading h2::after {
+        display: none;
+    }
+
+    .common-heading h2 {
+        font-size: 24px;
+    }
+
+    .common-heading h2 span {
+        padding: 0;
+        font-size: 24px;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .search-box {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .brand-section .company-brand-wrapper .brand-img {
+        max-width: 100px;
+    }
+
+    .search-section {
+        padding: 28px 16px;
+    }
+
+    .form-select {
+        width: 90%;
+        font-size: 14px;
+        padding-left: 40px;
+    }
+
+    .moblie-card-1 .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .moblie-card-row {
+        gap: 0;
+    }
+
+    .section-spacing {
+        padding: 40px 0 !important;
+    }
+
+    .deals-heading-section h2 {
+        font-size: 24px;
+    }
+
+    .deals-heading-section p {
+        font-size: 16px;
+        line-height: 26px;
+        padding: 8px 0;
+        margin-bottom: 5px;
+    }
+
+    .explore-img {
+        width: 100%;
+        margin-top: 40px;
+        max-width: 100%;
+    }
+
+    .common-heading {
+        margin-bottom: 30px;
+    }
+
+    .moblie-card-row img {
+        max-width: 138px;
+    }
+
+    .customers-section {
+        padding: 40px 0;
+        padding-top: 0px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 40px 0;
+        padding-bottom: 0;
+    }
+
+    .footer-links.collapse {
+        display: none;
+    }
+
+    .footer-links.collapse.show {
+        display: block;
+    }
+
+    .footer-contact-section {
+        gap: 0;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 15px;
+
+    }
+}
+
+@media (max-width: 767px) {
+    .px-5 {
+        padding: 0 !important;
+    }
+
+    .mobile-navbar {
+        width: 99%;
+        right: 0;
+        left: 0;
+        margin: auto;
+        top: 75px;
+    }
+
+    .heading-items {
+        text-align: center;
+        padding: 0px 10px;
+    }
+
+    .heading-items h1 {
+        font-size: 20px;
+    }
+
+    .heading-items p {
+        font-size: 15px;
+    }
+
+    .search-section {
+        padding: 8px 10px;
+        margin-top: -65px;
+    }
+
+
+    .home-phone {
+        max-height: 290px;
+    }
+
+    .brand-select {
+        border-right: solid 1px #ccc;
+
+    }
+
+    .form-select {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .section-spacing {
+        padding: 20px 0;
+    }
+
+    section {
+        padding: 20px 0;
+    }
+
+    .moblie-card-1 .card {
+        padding: 15px;
+        flex-direction: column;
+
+    }
+
+    .card .card-body {
+        width: 100%;
+    }
+
+    .moblie-card-row img {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .card-body h4 {
+        font-size: 12px;
+    }
+
+    .card-text {
+        font-size: 14px;
+    }
+
+    .rating-box .rating-btn {
+        font-size: 12px;
+    }
+
+    .price span {
+        font-size: 12px;
+    }
+
+    .case-many {
+        font-size: 14px;
+    }
+
+    .rating-box .rating-num {
+        font-size: 14px;
+    }
+
+    .view-btn a {
+        font-size: 12px;
+    }
+
+    .view-btn {
+        margin-top: 2px;
+        margin-bottom: 0;
+    }
+
+    .deals-heading-section h2 {
+        font-size: 18px;
+    }
+
+    .deals-heading-section p {
+        font-size: 13px;
+        line-height: 20px;
+        padding: 15px 0;
+    }
+
+    .deals-bg {
+        padding: 40px 0;
+    }
+
+    .deals-heading-section {
+        text-align: center;
+    }
+
+    .partners-section {
+        padding: 40px 0;
+    }
+
+    .moblie-card-row img {
+        min-width: 137px;
+    }
+
+    .clinet-card .customers-rating {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .clinet-card {
+        padding: 12px;
+    }
+
+    .clinet-card .user-section img {
+        width: 50px;
+    }
+
+    .clinet-card .description {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    .clinet-card .user-name h5 {
+        font-size: 14px;
+    }
+
+    .clinet-card .user-name p {
+        font-size: 12px;
+    }
+
+    .footer-logo-section {
+        gap: 20px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .footer-title {
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-bottom {
+        flex-direction: column-reverse;
+        padding: 10px 0;
+    }
+
+    .footer-bottom p,
+    .footer-bottom a {
+        font-size: 12px;
+    }
+
+    .company-toggle-section .footer-icon {
+        display: block;
+    }
+
+    .company-toggle-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+.navbar-expand-lg .navbar-nav {
+    gap: 20px;
+}
+
+/* tab style css */
+@media screen and (min-width:768px) and (max-width: 991px) {
+    .px-5 {
+        padding: 0 !important;
+    }
+
+    .moblie-card-1 .card {
+        width: 100%;
+        margin-bottom: 20px;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .moblie-card-row img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .card .card-body {
+        width: 100%;
+    }
+}
+
+/* mini desktop */
+@media screen and (min-width:992px) and (max-width: 1199px) {
+    .heading-items h1 {
+        font-size: 36px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .brand-logos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .clinet-card {
+        min-width: 280px;
+    }
+}
