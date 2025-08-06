@@ -30,9 +30,9 @@ body {
     line-height: 1.5;
 }
 
-section {
-    padding: 60px 0;
-}
+/* section {
+    padding: 70px 0;
+} */
 
 .border-none {
     border: none !important;
@@ -47,7 +47,6 @@ section {
 
 .custom-center-dropdowns .nav-item {
     margin: 0;
-    width: 100%;
 }
 
 .login-btn-section {
@@ -63,6 +62,23 @@ section {
     font-weight: 500;
     border: 1px solid var(--lightblue-color);
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.centered-dropdowns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active:focus,
+.navbar-toggler:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .custom-navbar .btn-primary {
@@ -77,10 +93,10 @@ section {
     align-items: flex-end;
 }
 
-.mobile-navbar-wapper .custom-link {
+.custom-link {
     position: relative;
     padding-bottom: 5px;
-    color: var(--lightgray-color);
+    color: var(--lightgray-color) !important;
     font-family: var(--font-roboto);
     font-size: 16px;
     font-weight: 400;
@@ -108,34 +124,44 @@ section {
 
 /* Home Section */
 .home-section {
-    padding: 2rem 0;
+    padding: 0 0 35px;
 }
 
 .section-spacing {
-    padding: 60px 0;
+    padding: 70px 0;
 }
 
 .home-bg-img {
-    background-image: url("../images/hoge-bg.png");
+    background-image: url(../images/hoge-bg.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: auto;
     display: flex;
     align-items: center;
+    max-height: 673px;
+    height: 673px;
+}
+
+.heading-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .heading-items h1 {
-    font-size: 46px;
+    font-size: 48px;
     font-family: var(--font-poppins);
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 500;
+    line-height: 50px;
 }
 
 .heading-items p {
     font-size: 20px;
     font-family: var(--font-poppins);
     font-weight: 300;
+    line-height: 22px;
 }
 
 .home-phone {
@@ -163,7 +189,19 @@ section {
 
 .search-section {
     padding: 28px 58px;
-    margin-top: -95px;
+    margin-top: -35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0 0 30px 0 #00000024;
+    border-radius: 16px;
+    background-color: white;
+}
+
+.search-section .dropdown-divider {
+    border-left: 1px solid #ddd;
+    height: 20px;
 }
 
 .divider {
@@ -175,14 +213,18 @@ section {
 .form-control {
     border: none;
     box-shadow: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    cursor: pointer;
 }
 
 .form-select {
-    width: 80%;
-    padding-left: 75px;
+
     font-weight: 400;
     font-size: 16px;
     color: var(--lightgray-color);
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .form-select:focus,
@@ -194,14 +236,19 @@ section {
 
 .search-icon {
     color: #2c3e50;
-    font-size: 1.2rem;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Common Heading */
 .common-heading {
     text-align: center;
     line-height: 16px;
-    margin-bottom: 35px;
+    margin-bottom: 30px !important;
+    margin: 0;
+    font-size: 32px;
 }
 
 .common-heading h2 {
@@ -225,7 +272,7 @@ section {
 .common-heading h2::after {
     content: '';
     display: block;
-    width: 45%;
+    width: 53%;
     height: 1px;
     background-color: var(--gray-dark-color);
     position: absolute;
@@ -234,9 +281,16 @@ section {
 }
 
 .common-heading p {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
+    padding-bottom: 20px;
     color: var(--lightgray-color);
+    margin: 0;
+    font-family: var(--font-roboto);
+}
+
+.common-heading .real {
+    margin: 0;
 }
 
 .without-line h2 {
@@ -264,12 +318,12 @@ section {
     /* ✅ Corrected here */
 }
 
-.mobile-card-1 .phone-product img:hover {
+/* .mobile-card-1 .phone-product img:hover {
     transform: scale(1.05);
-}
+} */
 
 .mobile-card-1 .card {
-    box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
     padding: 20px;
     border: none;
     border-radius: 20px;
@@ -288,7 +342,10 @@ section {
 }
 
 .customers-section .slick-track {
-    padding: 10px 0;
+    padding: 70px 0;
+}
+.customer-slider .slick-track {
+    padding: 5px 0 50px;
 }
 
 .mobile-card-row img {
@@ -310,7 +367,7 @@ section {
 }
 
 .card .card-body {
-    padding: 10px 0;
+    padding: 5px 0;
 }
 
 .card-body h4 {
@@ -325,8 +382,12 @@ section {
 }
 
 /* Slider Dots */
+.slick-dotted.slick-slider {
+    margin: 0 !important;
+}
+
 .deals-bg .slick-dots {
-    display: flex !important;
+    display: none !important;
     justify-content: center;
     padding-top: 10px;
     position: absolute;
@@ -390,8 +451,8 @@ section {
 }
 
 .view-btn {
-    margin-top: 50px;
-    margin-bottom: 30px;
+    margin: 35px 0 20px;
+    padding-top: 5px;
 }
 
 .view-btn a {
@@ -412,13 +473,20 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    padding: 20px 0;
+}
+
+.deals-bg .deals-heading-section {
+    display: flex;
+    flex-direction: column;
 }
 
 .deals-heading-section h2 {
-    font-size: 40px;
+    font-size: 42px;
     font-weight: 400;
     font-family: var(--font-poppins);
     margin: 0;
+    line-height: 48px;
 }
 
 .deals-heading-section p {
@@ -427,7 +495,7 @@ section {
     font-family: var(--font-poppins);
     color: var(--gray-color);
     line-height: 20px;
-    padding: 16px 0;
+    padding: 18px 0;
 }
 
 .explore a {
@@ -444,7 +512,8 @@ section {
 
 .explore-img {
     max-width: 348px;
-    height: auto;
+    height: 348px;
+    margin: auto;
     object-fit: cover;
 }
 
@@ -454,9 +523,7 @@ section {
 }
 
 /* Partners Section */
-.partners-section {
-    background: var(--text-color);
-}
+
 
 .company-logo-img {
     flex: 0 0 calc(100% / 7);
@@ -473,6 +540,7 @@ section {
 /* Brand Section */
 .brand-section {
     background: white;
+    padding-top: 80px;
 }
 
 .brand-section .company-brand-wrapper {
@@ -480,14 +548,7 @@ section {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
-}
-
-.company-brand-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
+    gap: 60px;
     padding: 20px 0;
 }
 
@@ -495,7 +556,7 @@ section {
     max-width: 140px;
     height: auto;
     object-fit: contain;
-    transition: transform 0.3s ease;
+    /* transition: transform 0.3s ease; */
     cursor: pointer;
 }
 
@@ -506,6 +567,47 @@ section {
 /* Customers Section */
 .customers-section {
     padding: 40px 0;
+}
+
+.review-summary {
+    max-width: 377px;
+    margin: auto;
+    background: var(--text-color);
+    height: 58px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.review-summary .review-rating {
+    font-size: 12px;
+    color: var(--black-color);
+    font-weight: 400;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-right: 2px solid var(--lightgray-color);
+    padding-right: 15px;
+    margin-right: 5px;
+}
+
+.review-summary .verified-review {
+    color: var(--black-color);
+    font-size: 12px;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+}
+
+.review-summary .verified-review span {
+    color: var(--lightblue-color);
+    font-size: 12px;
+    font-weight: 800;
 }
 
 .scroll-cards {
@@ -529,6 +631,11 @@ section {
 
 .slick-initialized .slick-slide {
     margin: 0 10px;
+}
+
+.slick-list {
+    padding: 0;
+    overflow: hidden;
 }
 
 /* .customers-section .slick-dots {
@@ -650,7 +757,7 @@ footer {
     font-size: 24px;
     font-weight: 500;
     color: var(--lightblue-color);
-    margin-bottom: 15px;
+    margin-bottom: 0;
     padding-bottom: 10px;
 }
 
@@ -749,24 +856,24 @@ footer {
 
 /* Partners Grid */
 .partners-section {
-    padding: 50px 20px;
-    background-color: #f4f6fa;
+    padding: 50px 0px !important;
     text-align: center;
+    background: var(--text-color);
 }
 
 .brand-logos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 15px;
     padding: 0;
     margin: 0 auto;
     list-style: none;
-    max-width: 1000px;
+    width: 100%;
 }
 
 .brand-logos li {
     background: #fff;
-    padding: 10px 15px;
+    padding: 15px;
     border-radius: 6px;
     transition: background 0.3s ease;
     display: flex;
@@ -777,7 +884,7 @@ footer {
 .brand-logos img {
     max-width: 100%;
     height: auto;
-    max-height: 50px;
+    max-height: 70px;
     object-fit: contain;
 }
 
@@ -788,23 +895,39 @@ footer {
     }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 992px) {
 
     /* common-------- */
     section {
         padding: 30px;
     }
 
+    .home-bg-img {
+        height: auto;
+    }
+
     /* home page ------- */
+    .heading-items {
+        gap: 0;
+    }
+
     .heading-items h1 {
         font-size: 25px;
+        line-height: 30px;
+    }
+
+    .heading-items p {
+        font-size: 18px;
+        /* line-height: 30px; */
     }
 
     .common-heading h2,
     .common-heading h2 span {
         font-size: 24px;
     }
-
+    .customers-section .slick-initialized{
+        height: 300px;
+    }
     .custom-center-dropdowns {
         margin-top: 0;
         text-align: center;
@@ -831,6 +954,11 @@ footer {
         top: 75px;
     }
 
+    .explore-img img {
+        width: 100%;
+        margin: auto;
+    }
+
     .deals-heading-section h2 {
         font-size: 28px;
     }
@@ -851,18 +979,32 @@ footer {
     .mobile-card-1 .card {
         flex-direction: column;
         margin-bottom: 20px;
+        gap: 0;
     }
 
     .deals-heading-section p {
         font-size: 16px;
-        line-height: 26px;
-        padding: 8px 0;
+        line-height: 22px;
+        padding: 8px 0 15px;
         margin-bottom: 5px;
     }
 
     .mobile-card-row img {
         width: 100%;
         max-width: 100%;
+    }
+
+    .brand-section .company-brand-wrapper {
+        gap: 20px;
+    }
+    .search-section{
+        margin-top: -65px;
+    }
+    .brand-section{
+        padding: 40px 0;
+    }
+    .customers-section{
+        padding: 40px 0;
     }
 }
 
@@ -993,16 +1135,17 @@ footer {
 
     .deals-heading-section h2 {
         font-size: 24px;
+        line-height: 26px;
     }
 
     .deals-heading-section p {
         font-size: 16px;
         line-height: 26px;
-        padding: 8px 0;
+        padding: 8px 0 15px;
         margin-bottom: 5px;
     }
 
-    .explore-img {
+    .explore-img img {
         width: 100%;
         margin-top: 40px;
         max-width: 100%;
@@ -1017,7 +1160,7 @@ footer {
     }
 
     .customers-section {
-        padding: 40px 0;
+        padding:  0;
         padding-top: 0px;
     }
 
@@ -1041,6 +1184,9 @@ footer {
         flex-wrap: wrap;
         margin-top: 15px;
 
+    }
+    .customers-section .slick-initialized{
+        height: 200px;
     }
 }
 
@@ -1072,7 +1218,7 @@ footer {
 
     .search-section {
         padding: 8px 10px;
-        margin-top: -65px;
+        margin-top: -35px;
     }
 
 
@@ -1148,7 +1294,7 @@ footer {
     }
 
     .deals-heading-section h2 {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .deals-heading-section p {
@@ -1165,9 +1311,9 @@ footer {
         text-align: center;
     }
 
-    .partners-section {
+    /* .partners-section {
         padding: 40px 0;
-    }
+    } */
 
     .moblie-card-row img {
         min-width: 137px;
@@ -1237,7 +1383,7 @@ footer {
 }
 
 .navbar-expand-lg .navbar-nav {
-    gap: 20px;
+    gap: 28px;
 }
 
 /* tab style css */
@@ -1274,8 +1420,23 @@ footer {
 }
 
 @media (max-width: 480px) {
+
     .brand-logos {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .brand-dropdown {
+        width: 100%;
+    }
+
+    .dropdown-divider {
+        display: none;
+    }
+
+    .form-select {
+        padding: 10px 5px;
+        box-shadow: 0 1px 0px #888888;
+        margin-bottom: 10px;
     }
 
     .clinet-card {

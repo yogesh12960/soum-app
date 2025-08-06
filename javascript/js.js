@@ -12,6 +12,9 @@ $(document).ready(function () {
         autoplaySpeed: 3000
     });
 });
+
+
+
 function handleFooterCollapse() {
     const isMobile = window.innerWidth <= 767;
     const toggles = document.querySelectorAll('.footer-toggle');
@@ -93,24 +96,26 @@ $(document).ready(function () {
 // card slider------------
 $(document).ready(function () {
     $('.customer-slider').slick({
+        dots: false,
         infinite: true,
+        speed: 300,
         slidesToShow: 3,
         slidesToScroll: 1,
         arrows: true,
-        // dots: true,
+        autoplay: true,
         responsive: [
             {
-                breakpoint: 1100,
+                breakpoint: 992,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 1,
+                    slidesToScroll: 1
                 }
             },
             {
                 breakpoint: 768,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1,
+                    slidesToScroll: 1
                 }
             }
         ]
