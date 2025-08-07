@@ -40,7 +40,8 @@ body {
 
 /* Navbar Styles */
 .custom-navbar {
-    padding: 12px;
+    padding-top: 0;
+    padding-bottom: 0;
     border-bottom: 1px solid rgba(137, 137, 137, 0.3);
     background: #ffffff;
 }
@@ -48,6 +49,16 @@ body {
 .custom-center-dropdowns .nav-item {
     margin: 0;
 }
+
+.custom-center-dropdowns .nav-item .dropdown-menu {
+    display: none;
+    border: none;
+}
+
+.custom-center-dropdowns .nav-item:hover .dropdown-menu {
+    display: block;
+}
+
 
 .login-btn-section {
     display: flex;
@@ -68,6 +79,13 @@ body {
     gap: 4px;
 }
 
+.custom-navbar .btn:hover {
+    background-color: var(--lightblue-color);
+    color: var(--text-color);
+}
+
+
+
 .centered-dropdowns {
     display: flex;
     align-items: center;
@@ -85,6 +103,12 @@ body {
     background: var(--lightblue-color);
     color: white;
     font-weight: 600;
+    transition: filter 0.3s ease;
+}
+
+.custom-navbar .btn-primary:hover {
+    filter: brightness(1.2);
+    /* or contrast(1.2), saturate(120%), etc. */
 }
 
 .mobile-navbar-wapper {
@@ -95,8 +119,8 @@ body {
 
 .custom-link {
     position: relative;
-    padding-bottom: 5px;
-    color: var(--lightgray-color) !important;
+    padding: 20px 0;
+    color: var(--lightgray-color);
     font-family: var(--font-roboto);
     font-size: 16px;
     font-weight: 400;
@@ -105,6 +129,14 @@ body {
     align-items: center;
     gap: 5px;
     text-decoration: none;
+}
+
+.custom-center-dropdowns .nav-item:hover .custom-link {
+    color: var(--lightblue-color);
+}
+
+.custom-link:hover {
+    color: var(--lightblue-color);
 }
 
 .mobile-navbar-wapper .custom-link::after {
@@ -132,15 +164,66 @@ body {
 }
 
 .home-bg-img {
-    background-image: url(../images/hoge-bg.png);
+    background-image: url(../images/home-bg.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: auto;
+    height: 673px;
     display: flex;
     align-items: center;
-    max-height: 673px;
-    height: 673px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 🌀 Gradient animated overlay */
+.home-bg-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right,
+            #ffc1c1 0%,
+            #ffc9c9 20%,
+            #ffe0c0 40%,
+            #ffe9d0 60%,
+            #f0e8ff 80%,
+            #eeeaff 100%);
+    background-size: 300% 300%;
+    animation: gradientMove 12s ease infinite;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* 🎯 Custom cursor circle */
+/* .custom-cursor {
+    position: absolute !important;
+    width: 100px;
+    height: 100px;
+    background-color: #ff9aa2;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    transition: transform 0.05s linear;
+} */
+
+/* ✅ Ensuring content appears above gradient, below cursor */
+.home-bg-img>* {
+    position: relative;
+    z-index: 1;
 }
 
 .heading-items {
@@ -175,6 +258,7 @@ body {
     object-fit: contain;
 }
 
+
 /* Search Box */
 .home-search-section {
     padding-bottom: 0;
@@ -197,6 +281,8 @@ body {
     box-shadow: 0 0 30px 0 #00000024;
     border-radius: 16px;
     background-color: white;
+    position: relative;
+    top: 0;
 }
 
 .search-section .dropdown-divider {
@@ -215,16 +301,15 @@ body {
     box-shadow: none;
     padding-top: 0;
     padding-bottom: 0;
-    cursor: pointer;
 }
 
 .form-select {
-
     font-weight: 400;
     font-size: 16px;
     color: var(--lightgray-color);
     padding-top: 0;
     padding-bottom: 0;
+    cursor: pointer;
 }
 
 .form-select:focus,
@@ -303,7 +388,7 @@ body {
 
 /* Mobile Cards */
 .mobile-card-1 .phone-product {
-    height: 268px;
+    height: 100%;
     width: 100%;
     object-fit: cover;
     overflow: hidden;
@@ -344,6 +429,7 @@ body {
 .customers-section .slick-track {
     padding: 70px 0;
 }
+
 .customer-slider .slick-track {
     padding: 5px 0 50px;
 }
@@ -467,6 +553,18 @@ body {
     font-style: italic;
 }
 
+.view-btn a:hover {
+    background: var(--darkblue-color);
+}
+
+.view-btn a svg {
+    transition: transform 0.3s ease-in-out;
+}
+
+.view-btn a:hover svg {
+    transform: translateX(3px);
+}
+
 /* Deals Section */
 .deals-bg {
     background-image: url("../images/explor-bg-1.jpg");
@@ -498,6 +596,10 @@ body {
     padding: 18px 0;
 }
 
+.explore {
+    transition: transform 0.3s ease-in-out;
+}
+
 .explore a {
     color: var(--text-color);
     font-family: var(--font-roboto);
@@ -508,6 +610,15 @@ body {
     text-decoration: none;
     border-radius: 10px;
     margin-top: 20px;
+}
+
+.explore:hover {
+    transform: translateY(-3px);
+
+}
+
+.explore:hover a {
+    background-color: var(--darkblue-color);
 }
 
 .explore-img {
@@ -556,12 +667,12 @@ body {
     max-width: 140px;
     height: auto;
     object-fit: contain;
-    /* transition: transform 0.3s ease; */
+    transition: transform 0.3s ease;
     cursor: pointer;
 }
 
 .company-brand-wrapper .brand-img:hover {
-    transform: scale(1.1);
+    transform: scale(1.03);
 }
 
 /* Customers Section */
@@ -645,7 +756,7 @@ body {
 .clinet-card {
     flex: 0 0 auto;
     width: 30%;
-    min-width: 330px;
+    /* min-width: 330px; */
     box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
     padding: 20px;
     border-radius: 20px;
@@ -822,6 +933,16 @@ footer {
     line-height: 100%;
 }
 
+.emai-link {
+    color: var(--gray-color);
+    text-decoration: none;
+}
+
+.emai-link:hover {
+    color: var(--darkblue-color);
+    text-decoration: underline;
+}
+
 .footer-policy {
     text-decoration: none;
     color: #555;
@@ -863,12 +984,13 @@ footer {
 
 .brand-logos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
     gap: 15px;
     padding: 0;
     margin: 0 auto;
     list-style: none;
     width: 100%;
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .brand-logos li {
@@ -879,6 +1001,15 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.brand-logos li:hover {
+    box-shadow: 0 1px 3px 0 rgba(60, 64, 67, .3), 0 4px 8px 3px rgba(60, 64, 67, .15);
+}
+
+.brand-logos li:hover img {
+    /* transform: scale(0.98); */
+    transition: transform 0.3s ease-in-out;
 }
 
 .brand-logos img {
@@ -925,9 +1056,11 @@ footer {
     .common-heading h2 span {
         font-size: 24px;
     }
-    .customers-section .slick-initialized{
+
+    .customers-section .slick-initialized {
         height: 300px;
     }
+
     .custom-center-dropdowns {
         margin-top: 0;
         text-align: center;
@@ -997,13 +1130,16 @@ footer {
     .brand-section .company-brand-wrapper {
         gap: 20px;
     }
-    .search-section{
+
+    .search-section {
         margin-top: -65px;
     }
-    .brand-section{
+
+    .brand-section {
         padding: 40px 0;
     }
-    .customers-section{
+
+    .customers-section {
         padding: 40px 0;
     }
 }
@@ -1160,7 +1296,7 @@ footer {
     }
 
     .customers-section {
-        padding:  0;
+        padding: 0;
         padding-top: 0px;
     }
 
@@ -1185,7 +1321,8 @@ footer {
         margin-top: 15px;
 
     }
-    .customers-section .slick-initialized{
+
+    .customers-section .slick-initialized {
         height: 200px;
     }
 }
@@ -1434,9 +1571,27 @@ footer {
     }
 
     .form-select {
-        padding: 10px 5px;
-        box-shadow: 0 1px 0px #888888;
+        padding: 10px 8px;
+        box-shadow: 0 1px 0px 0 #888888;
         margin-bottom: 10px;
+        border-radius: 0;
+
+    }
+
+    .search-icon {
+        padding: 5px 6px;
+        background: #6b6b6b14;
+        width: 100%;
+        border-radius: 20px;
+        padding: 5px 10px;
+    }
+
+    input.form-control:focus {
+        background: transparent;
+    }
+
+    .form-control {
+        background: transparent;
     }
 
     .clinet-card {
